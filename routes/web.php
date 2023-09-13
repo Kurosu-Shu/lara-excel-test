@@ -19,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('users/export/', [UsersController::class, 'export']);
+
+Route::get('users/import/view', [UsersController::class, 'viewImport']);
+
+Route::post('users/import/', [UsersController::class, 'import'])->name('users.import');
+
