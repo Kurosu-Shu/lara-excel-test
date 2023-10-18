@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\InvoicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,8 @@ Route::get('users/export/', [UsersController::class, 'export']);
 Route::get('users/import/view', [UsersController::class, 'viewImport']);
 
 Route::post('users/import/', [UsersController::class, 'import'])->name('users.import');
+
+//invoices
+Route::get('invoices/view', [InvoicesController::class, 'view']);
+Route::get('invoices/export/', [InvoicesController::class, 'export']);
 

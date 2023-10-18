@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function export()
     {
-        return Excel::download(new UsersExport, 'users.ods');
+        return Excel::download(new UsersExport, 'users.pdf');
     }
 
     //import page
