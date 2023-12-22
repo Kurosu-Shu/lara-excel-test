@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InvoicesController;
+use Carbon\Carbon;
+use App\Models\Invoice;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,11 @@ use App\Http\Controllers\InvoicesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $invoice = Invoice::get();
+
+    return response()->json([
+        "data" => $invoice
+    ]);
 });
 
 Route::get('users/export/', [UsersController::class, 'export']);
